@@ -1,43 +1,391 @@
 <!DOCTYPE html>
 <html>
-<title>Nandan Raj</title>
+<title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
-  <meta http-equiv="cache-control" content="max-age=0" />
-  <meta http-equiv="expires" content="0" />
-  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-  <meta http-equiv="pragma" content="no-cache" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-    background-image: url('img/background.jpg');
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
-
-    min-height: 100%;
-    background-position: center;
-    background-size: cover;
+ <!--for timeline-->   
+    * {
+  box-sizing: border-box;
 }
-</style>
-<body>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    Portfolio
-  </div>
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">Nandan Raj here!</p>
+/* Set a background color */
+.bodyofTimeline {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color:#009688;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #009688;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #009688;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #009688;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #009688 transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: #009688;
+  position: relative;
+  border-radius: 6px;
+}
+.small {
+    font-size: 95%;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+    <!--end for timeline-->  
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="img/nan.jpg" style="width:100%;" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container " style="text-shadow: #666666 2px 0 10px; color:#FFFFFF">
+            <h2>Nandan Raj</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Fresher</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Indore, MP</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>nandanraj56@gmail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+91-914 461 8624</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <p>Java Core</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+          </div>
+          <p>JSP & Servlet</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+              <div class="w3-center w3-text-white">80%</div>
+            </div>
+          </div>
+          <p>C++</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+          </div>
+          <p>C</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
+          </div>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p>English</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:80%"></div>
+          </div>
+          <p>Hindi</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:95%"></div>
+          </div>
+          
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Skills</h2>
+        <div class="w3-container">
+          <table class="w3-table w3-striped w3-border w3-hoverable w3-margin-bottom">
+                <tr>
+                    <td>•	Technical Languages</td>
+                    <td>C, C++, JAVA (J2SE &amp; J2EE)</td>
+                </tr>
+                <tr>
+                    <td>•	Operating Systems</td>
+                    <td>Windows,  Linux/Unix, Mac</td>
+                </tr>
+                <tr>
+                    <td>•	Areas of Interest</td>
+                    <td>Data Structure, Operating System</td>
+                </tr>
+                <tr>
+                    <td>•	Databases</td>
+                    <td>My SQL</td>
+                </tr>
+                <tr>
+                    <td>•	Tools used</td>
+                    <td>MS Office, Netbeans, Android Studio</td>
+                </tr>
+          </table>
+        </div>
+        
+      </div>
+
+        <!--Timeline start-->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="timeline w3-margin-bottom">
+            <div class="container left">
+                <div class="content">
+                <h4>Computer Science Engineering</h4>
+                <h6>2014-2018</h6>
+                <p class="small">B.E from Lakshmi Narain College of  Technology (RGPV),  Indore </p>
+            </div>
+            </div>
+          <div class="container right">
+            <div class="content">
+              <h4>Senior Secondary School Certificate </h4>
+                <h6>2012-2014</h6>
+                <p class="small">Assembly of God Church School Bettiah, Bihar CBSE </p>
+            </div>
+          </div>
+         <div class="container left">
+            <div class="content">
+              <h4>Secondary School Certificate</h4>
+                <h6>2012</h6>
+                <p class="small">St Michael’s Academy, Bettiah, Bihar CBSE </p>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+        <!--Timeline End-->
+    <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects Undertaken</h2>
+        <div class="w3-container">
+          <table class="w3-table w3-striped w3-border ">
+                <tr>
+                    <th colspan="2">Android App on Yuvanah 2k17 (Minor Project)</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Yuvanah 2k17 is an inter-college fest organized by LNCT Group of College. This app provides users all information about Yuvanah events including schedule, contact persons, fare for participate; etc</td>
+                </tr>
+               <tr>
+                    <td>•	Technology Used</td>
+                    <td>JAVA , XML
+</td>
+                </tr>
+                <tr>
+                    <td>•	Tools Used</td>
+                    <td>Android Studio</td>
+                </tr>
+                <tr>
+                    <td>•	Team</td>
+                    <td>2 Member</td>
+                </tr>
+          </table>
+        </div>
+        <hr>
+        <div class="w3-container">
+          <table class="w3-table w3-striped w3-border ">
+                <tr>
+                    <th colspan="2">Online Laundry Plateform (Major Project)</th>
+                </tr>
+                <tr>
+                    <td colspan="2">This is a platform built for laundry merchants to serve their offering to online users. It has three views i.e- customer, merchant, admin. It provides users, merchant lists at their selected location to place a order and get their work done</td>
+                </tr>
+                <tr>
+                    <td>•	Technology Used</td>
+                    <td>JAVA (Jdbc, Jsp &amp; Servlet),  Ajax, jQuery, JavaScript,
+Bootstrap HTML &amp; CSS
+</td>
+                </tr>
+                <tr>
+                    <td>•	Tools Used</td>
+                    <td>Netbeans, MySQL</td>
+                </tr>
+                <tr>
+                    <td>•	Team</td>
+                    <td>2 Member</td>
+                </tr>
+          </table>
+        </div>
+        <hr>
+      </div>
+    <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects Undertaken</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+          <p>Web Development! All I need to know in one place</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>London Business School</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+          <p>Master Degree</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>School of Coding</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+          <p>Bachelor Degree</p><br>
+        </div>
+      </div>
+    <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects Undertaken</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+          <p>Web Development! All I need to know in one place</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>London Business School</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
+          <p>Master Degree</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>School of Coding</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
+          <p>Bachelor Degree</p><br>
+        </div>
+      </div>
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
   </div>
   
-  <div class="w3-display-bottomleft w3-padding-large">
-    Contact me <a href="mailto:nandanraj56@gmail.com" target="_blank">nandanraj56@gmail.com</a>
-  </div>
+  <!-- End Page Container -->
 </div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
 
 </body>
 </html>
